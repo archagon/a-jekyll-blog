@@ -3,8 +3,8 @@
   <channel>
     <title>Your awesome title</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
-    <link>http://archagon.github.io/a-jekyll-bloga-jekyll-blog/</link>
-    <atom:link href="http://archagon.github.io/a-jekyll-bloga-jekyll-blog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://archagon.github.io/a-jekyll-blog//</link>
+    <atom:link href="http://archagon.github.io/a-jekyll-blog//feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Welcome to Jekyll!</title>
@@ -23,8 +23,8 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
 
 </description>
         <pubDate>Mon, 23 Jun 2014 17:05:28 +0200</pubDate>
-        <link>http://archagon.github.io/a-jekyll-bloga-jekyll-blog/jekyll/update/2014/06/23/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://archagon.github.io/a-jekyll-bloga-jekyll-blog/jekyll/update/2014/06/23/welcome-to-jekyll/</guid>
+        <link>http://archagon.github.io/a-jekyll-blog//jekyll/update/2014/06/23/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://archagon.github.io/a-jekyll-blog//jekyll/update/2014/06/23/welcome-to-jekyll/</guid>
       </item>
     
       <item>
@@ -54,8 +54,8 @@ To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; direc
 &lt;/div&gt;
 </description>
         <pubDate>Mon, 23 Jun 2014 01:52:07 +0200</pubDate>
-        <link>http://archagon.github.io/a-jekyll-bloga-jekyll-blog/programming/2014/06/23/second-post/</link>
-        <guid isPermaLink="true">http://archagon.github.io/a-jekyll-bloga-jekyll-blog/programming/2014/06/23/second-post/</guid>
+        <link>http://archagon.github.io/a-jekyll-blog//programming/2014/06/23/second-post/</link>
+        <guid isPermaLink="true">http://archagon.github.io/a-jekyll-blog//programming/2014/06/23/second-post/</guid>
       </item>
     
       <item>
@@ -71,8 +71,8 @@ Look ma, no code!
 &lt;p&gt;That should do for a first try!&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Jun 2014 01:50:39 +0200</pubDate>
-        <link>http://archagon.github.io/a-jekyll-bloga-jekyll-blog/2014/06/23/first-post/</link>
-        <guid isPermaLink="true">http://archagon.github.io/a-jekyll-bloga-jekyll-blog/2014/06/23/first-post/</guid>
+        <link>http://archagon.github.io/a-jekyll-blog//2014/06/23/first-post/</link>
+        <guid isPermaLink="true">http://archagon.github.io/a-jekyll-blog//2014/06/23/first-post/</guid>
       </item>
     
   </channel>
