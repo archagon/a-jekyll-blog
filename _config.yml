@@ -8,3 +8,7 @@ url: "http://yourdomain.com"
 # Build settings
 markdown: kramdown
 permalink: pretty
+exclude: [build]
+
+# Custom settings
+lilypond_regen: true
