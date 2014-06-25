@@ -29,17 +29,22 @@ module Jekyll
 
       initial_filepath = 'images/lilypond/%s' % image_name
 
-      dirname = File.dirname('_' + initial_filepath)
-      unless File.directory?(dirname)
-        FileUtils.mkdir_p(dirname)
+      if should_regen || !File.exists?(initial_filepath + ".svg")
+        # dirname = File.dirname('_' + initial_filepath)
+        dirname = File.dirname(initial_filepath)
+        unless File.directory?(dirname)
+          FileUtils.mkdir_p(dirname)
+        end
+
+        escaped_contents = Shellwords.escape(@contents)
+        print "creating lilypond file: " + initial_filepath + "\n"
+        system 'build/ly_to_svg_file.py %s "%s"' % [escaped_contents, initial_filepath]
+
+        # FileUtils.mkdir_p(File.dirname('_site/%s.svg' % initial_filepath))
+        # FileUtils.cp('_%s.svg' % initial_filepath, '_site/%s.svg' % initial_filepath)
+      else
+        print "lilypond file already exists: " + initial_filepath + ".svg" + "\n"
       end
-
-      escaped_contents = Shellwords.escape(@contents)
-      print "creating lilypond file: " + initial_filepath + "\n"
-      system 'build/ly_to_svg_file.py %s "_%s"' % [escaped_contents, initial_filepath]
-
-      FileUtils.mkdir_p(File.dirname('_site/%s.svg' % initial_filepath))
-      FileUtils.cp('_%s.svg' % initial_filepath, '_site/%s.svg' % initial_filepath)
 
       '<img src="%s/images/lilypond/%s.svg">' % [config['baseurl'], image_name]
     end

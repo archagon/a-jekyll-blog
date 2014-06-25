@@ -1,15 +1,15 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: A Test Jekyll Blog
+email: archagon@archagon.net
 description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
 baseurl: ""
-url: "http://archagon.github.io/a-jekyll-blog"
+url: "http://a-jekyll-blog.archagon.net"
 
 # Build settings
 markdown: kramdown
 permalink: pretty
-exclude: [build]
+exclude: [build, Rakefile]
 # baseurl: /a-jekyll-blog
 
 # Custom settings
-lilypond_regen: true
+lilypond_regen: false

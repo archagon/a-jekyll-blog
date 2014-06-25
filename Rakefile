@@ -7,7 +7,8 @@ require "stringex"
 
 ## -- Misc Configs -- ##
 
-posts_dir             = "_posts-raw"    # directory for blog files
+posts_dir             = "_posts"        # directory for assembled blog files
+posts_raw_dir         = "_posts-raw"    # directory for source blog files
 new_post_ext          = "md"            # default new post file extension when using the new_post task
 new_post_metadata_ext = "yml"           # default new post metadata file extension when using the new_post task
 # public_dir      = "public"    # compiled site directory
@@ -44,9 +45,10 @@ new_post_metadata_ext = "yml"           # default new post metadata file extensi
 # #######################
 
 desc "Generate jekyll site"
-task :generate do
+task :build do
   puts "## Generating Site with Jekyll"
   # system "compass compile --css-dir #{source_dir}/stylesheets"
+  Rake::Task[:update_posts].execute
   system "jekyll build"
 end
 
@@ -67,16 +69,16 @@ end
 # end
 
 # usage rake new_post[my-new-post] or rake new_post['my new post'] or rake new_post (defaults to "new-post")
-desc "Begin a new post in #{posts_dir}"
+desc "Begin a new post in #{posts_raw_dir}"
 task :new_post, :title do |t, args|
   if args.title
     title = args.title
   else
     title = get_stdin("Enter a title for your post: ")
   end
-  mkdir_p "#{posts_dir}"
-  filename = "#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
-  filename_metadata = "#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_metadata_ext}"
+  mkdir_p "#{posts_raw_dir}"
+  filename = "#{posts_raw_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
+  filename_metadata = "#{posts_raw_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_metadata_ext}"
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
@@ -187,6 +189,41 @@ end
 #   cp "#{source_dir}.old/index.html", source_dir if blog_index_dir != source_dir && File.exists?("#{source_dir}.old/index.html")
 #   puts "## Updated #{source_dir} ##"
 # end
+
+desc "Merge raw posts with their metadata and put them in the posts directory."
+task :update_posts do
+  # remove contents of posts directory
+  rm_rf "#{posts_dir}"
+  mkdir_p "#{posts_dir}"
+
+  Dir.glob("#{posts_raw_dir}/*") do |item|
+    extension = File.extname item
+
+    # probably a blog post
+    if extension != ("." + new_post_metadata_ext)
+      name = File.basename item, ".*"
+      full_name = File.basename item
+      directory = File.dirname item
+      generated_post_path = "#{posts_dir}/#{full_name}"
+
+      # generate new post
+      File.open(generated_post_path, 'w') do |generated_post|
+        # prepend metadata if needed
+        metadata_file_path = "#{posts_raw_dir}/#{name}.#{new_post_metadata_ext}"
+        if File.exists?(metadata_file_path)
+          File.foreach(metadata_file_path) do |metadata_line|
+            generated_post.puts metadata_line
+          end
+        end
+        
+        # append rest of file
+        File.foreach(item) do |post_line|
+          generated_post.puts post_line
+        end
+      end
+    end
+  end
+end
 
 # ##############
 # # Deploying  #
@@ -329,13 +366,13 @@ end
 #   puts "\n---\n## Now you can deploy to #{repo_url} with `rake deploy` ##"
 # end
 
-# def ok_failed(condition)
-#   if (condition)
-#     puts "OK"
-#   else
-#     puts "FAILED"
-#   end
-# end
+def ok_failed(condition)
+  if (condition)
+    puts "OK"
+  else
+    puts "FAILED"
+  end
+end
 
 def get_stdin(message)
   print message
