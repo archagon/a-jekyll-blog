@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
+    <title>A Test Jekyll Blog</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
-    <link>http://archagon.github.io/a-jekyll-blog/</link>
-    <atom:link href="http://archagon.github.io/a-jekyll-blog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://a-jekyll-blog.archagon.net/</link>
+    <atom:link href="http://a-jekyll-blog.archagon.net/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>test</title>
+        <description>
+</description>
+        <pubDate>Wed, 25 Jun 2014 01:44:32 +0200</pubDate>
+        <link>http://a-jekyll-blog.archagon.net/2014/06/25/test/</link>
+        <guid isPermaLink="true">http://a-jekyll-blog.archagon.net/2014/06/25/test/</guid>
+      </item>
     
       <item>
         <title>Third post!</title>
@@ -13,15 +22,15 @@
 &lt;p&gt;&lt;img src=&quot;/images/lilypond/programming-music-2014-06-24-third-post-torture-test.svg&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 24 Jun 2014 01:52:07 +0200</pubDate>
-        <link>http://archagon.github.io/a-jekyll-blog/programming/music/2014/06/24/third-post/</link>
-        <guid isPermaLink="true">http://archagon.github.io/a-jekyll-blog/programming/music/2014/06/24/third-post/</guid>
+        <link>http://a-jekyll-blog.archagon.net/programming/music/2014/06/24/third-post/</link>
+        <guid isPermaLink="true">http://a-jekyll-blog.archagon.net/programming/music/2014/06/24/third-post/</guid>
       </item>
     
       <item>
         <title>Second post!</title>
         <description>&lt;h1 id=&quot;more-stuff&quot;&gt;More Stuff&lt;/h1&gt;
 
-&lt;p&gt;More stuff. I might mess around a bit here.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;More stuff. Have a footnote.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;another-header&quot;&gt;Another Header&lt;/h2&gt;
 
@@ -42,8 +51,8 @@
 &lt;/div&gt;
 </description>
         <pubDate>Mon, 23 Jun 2014 01:52:07 +0200</pubDate>
-        <link>http://archagon.github.io/a-jekyll-blog/programming/2014/06/23/second-post/</link>
-        <guid isPermaLink="true">http://archagon.github.io/a-jekyll-blog/programming/2014/06/23/second-post/</guid>
+        <link>http://a-jekyll-blog.archagon.net/programming/2014/06/23/second-post/</link>
+        <guid isPermaLink="true">http://a-jekyll-blog.archagon.net/programming/2014/06/23/second-post/</guid>
       </item>
     
       <item>
@@ -59,8 +68,8 @@ Look ma, no code!
 &lt;p&gt;That should do for a first try!&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Jun 2014 01:50:39 +0200</pubDate>
-        <link>http://archagon.github.io/a-jekyll-blog/2014/06/23/first-post/</link>
-        <guid isPermaLink="true">http://archagon.github.io/a-jekyll-blog/2014/06/23/first-post/</guid>
+        <link>http://a-jekyll-blog.archagon.net/2014/06/23/first-post/</link>
+        <guid isPermaLink="true">http://a-jekyll-blog.archagon.net/2014/06/23/first-post/</guid>
       </item>
     
   </channel>
