@@ -75,6 +75,46 @@
 
 <p><img src="/images/lilypond/programming-2014-06-23-second-post-2.svg" /></p>
 
+<p>It’s so simple! Here’s what the original Markdown file looks like before it’s processed by Jekyll:</p>
+
+<pre><code># More Stuff
+
+More stuff. Have a footnote.[^1]
+
+## Another Header
+
+Some content here.
+
+## Some Music
+
+{% lilypond %}
+    &lt;&lt;
+    \chords {
+        c1:m7 f2:7 c2
+    }
+    \relative c'' {
+        g2 es8( c4) es8
+        f8 es d c~ c2
+    }
+    \addlyrics {
+        You are
+        the sky and my TRAIN,
+    }
+    &gt;&gt;
+{% endlilypond %}
+
+{% lilypond %}
+    {
+        % middle tie looks funny here:
+        &lt;c' d'' b''&gt;8. ~ &lt;c' d'' b''&gt;8
+    }
+{% endlilypond %}
+
+(My apologies, but it looks like we can't go for a quine here.)
+
+[^1]: Let's try a footnote.
+</code></pre>
+
 <div class="footnotes">
   <ol>
     <li id="fn:1">
